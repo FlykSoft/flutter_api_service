@@ -1,0 +1,25 @@
+name: api_service
+description: "A new Flutter package project."
+version: 1.0.0+1
+homepage: 'none'
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+  flutter: ">=3.16.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dio: ^5.2.0
+  core_feature:
+    git:
+      url: https://github.com/FlykSoft/flutter_core_feature.git
+      ref: v1.0.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
