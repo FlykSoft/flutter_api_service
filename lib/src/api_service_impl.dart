@@ -1,5 +1,4 @@
 import 'package:api_service/api_service.dart';
-import 'package:api_service/src/server_failure.dart';
 import 'package:core_feature/core_feature.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -167,7 +166,8 @@ class ApiServiceImpl extends ApiService {
             ? ApiFailure.fromStatusCode(
                 statusCode: dioError.response!.statusCode!,
                 message: dioError.response!.data != null
-                    ? ServerFailure.fromJson(dioError.response!.data).message
+                    ? ServerFailureMessage.fromJson(dioError.response!.data)
+                        .message
                     : emptyErrorMessage,
               )
             : UnknownApiFailure(
