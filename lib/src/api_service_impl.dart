@@ -162,7 +162,9 @@ class ApiServiceImpl extends ApiService {
     final DioException dioError,
   ) =>
       Left(
-        dioError.response != null && dioError.response!.statusCode != null
+        dioError.response != null &&
+                dioError.response!.statusCode != null &&
+                dioError.response!.data! is Map
             ? ApiFailure.fromStatusCode(
                 statusCode: dioError.response!.statusCode!,
                 message: dioError.response!.data != null
