@@ -170,10 +170,8 @@ class ApiServiceImpl extends ApiService {
                 message: dioError.response!.data != null
                     ? ServerFailureMessage.fromJson(dioError.response!.data)
                         .message
-                    : emptyErrorMessage,
+                    : null,
               )
-            : UnknownApiFailure(
-                message: emptyErrorMessage,
-              ),
+            : const UnknownApiFailure(),
       );
 }
